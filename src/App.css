@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.blank {
+  color: red;
+}
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+.navBarLink {
+  margin: 5px;
+}
