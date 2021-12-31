@@ -1,31 +1,37 @@
 import React from 'react'
 import { useState } from 'react/cjs/react.development'
 
-export default function About() {
+export default function About(props) {
 
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white',
-    })
-    const [btntext, setBtntext] = useState("Enable Dark Mode")
-
-    const toggleStyle = () => {
-        if (myStyle.color === 'white') {
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white',
-            })
-            setBtntext("Enable Dark Mode")
-        }
-        else {
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '1px solid white',
-            })
-            setBtntext("Enable Light Mode");
-        }
+    // const [myStyle, setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white',
+    // })
+    let myStyle = {
+        color: props.mode === 'dark' ? 'white' : '#212529',
+        backgroundColor: props.mode === 'dark' ? '#212529' : 'white',
+        border: '2px solid',
+        borderColor: props.mode === 'dark' ? '#212529' : 'white',
     }
+    // const [btntext, setBtntext] = useState("Enable Dark Mode")
+
+    // const toggleStyle = () => {
+    //     if (myStyle.color === 'white') {
+    //         setMyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white',
+    //         })
+    //         setBtntext("Enable Dark Mode")
+    //     }
+    //     else {
+    //         setMyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black',
+    //             border: '1px solid white',
+    //         })
+    //         setBtntext("Enable Light Mode");
+    //     }
+    // }
 
 
     return (
@@ -69,10 +75,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <button onClick={toggleStyle} type="button" className="btn btn-primary my-3">{btntext}</button>
 
-            </div>
         </div>
     )
 }

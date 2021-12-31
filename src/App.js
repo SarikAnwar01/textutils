@@ -1,15 +1,15 @@
 
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react'
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');//wheather dark mode is on or not
@@ -26,7 +26,7 @@ function App() {
   const toggleMode = () => {
     if (mode === 'light') {
       setMode("dark");
-      document.body.style.backgroundColor = "black";
+      document.body.style.backgroundColor = "#212529";
       showAlert("dark mode enabled", "success");
     }
     else {
@@ -37,22 +37,22 @@ function App() {
   }
   return (
     <>
-      {/* <Router> */}
-      <Navbar title="textutiles" abouttext="About" mode={mode} toggleMode={toggleMode} />
-      <Alert alert=" " alert={alert} />
-      <div className="container my-3">
-        {/* <Routes> */}
-        {/* <Route exact path="/about" element={<About />} /> */}
+      <Router>
+        <Navbar title="textutiles" abouttext="About" mode={mode} toggleMode={toggleMode} />
+        <Alert alert=" " alert={alert} />
+        <div className="container my-3">
+          <Routes>
+            <Route exact path="/about" element={<About mode={mode} />} />
 
 
-        <TextForm showAlert={showAlert} heading="Enter the text" mode={mode} />
+            {/* <TextForm showAlert={showAlert} heading="Enter the text" mode={mode} /> */}
 
-        {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text" mode={mode} />}>
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text" mode={mode} />}>
 
             </Route>
-          </Routes> */}
-      </div>
-      {/* </Router> */}
+          </Routes>
+        </div>
+      </Router>
 
 
 
