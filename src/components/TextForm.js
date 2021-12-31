@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 export default function TextForm(props) {
+
     const handleUpClick = () => {
         // console.log("uppercase was clicked" + text);
         let newText = text.toUpperCase();
@@ -43,11 +44,11 @@ export default function TextForm(props) {
 
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'dark' ? '#212529' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="Mybox" rows="8"></textarea>
                 </div>
-                <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to uppercase</button>
-                <button className="btn btn-primary mx-2 my-1" onClick={handleloClick}>Convert to lowercase</button>
-                <button className="btn btn-primary mx-2 my-1" onClick={handleclearClick}>Clear Text</button>
-                <button className="btn btn-primary mx-2 my-1" onClick={handlecopyClick}>Copy</button>
-                <button className="btn btn-primary mx-2 my-1 " onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to uppercase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleloClick}>Convert to lowercase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleclearClick}>Clear Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handlecopyClick}>Copy</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1 " onClick={handleExtraSpaces}>Remove Extra Spaces</button>
 
             </div>
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
