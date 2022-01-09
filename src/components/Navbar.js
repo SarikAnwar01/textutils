@@ -5,7 +5,7 @@ export default function Navbar(props) {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">{props.title}</Link>
+                <Link className="navbar-brand" to="/textutils">{props.title}</Link>
                 {/* <a className="navbar-brand" href="#">{props.title}</a> */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -15,7 +15,7 @@ export default function Navbar(props) {
                         <li className="nav-item">
 
                             {/* <a style={{ color: 'inherit', textDecoration: 'inherit' }} className="nav-Link navBarLink " href="#">Home</a> */}
-                            <Link style={{ color: props.mode === 'dark' ? 'white' : 'black', textDecoration: 'inherit' }} className="nav-Link navBarLink " to="/">Home</Link>
+                            <Link style={{ color: props.mode === 'dark' ? 'white' : 'black', textDecoration: 'inherit' }} className="nav-Link navBarLink " to="/textutils">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link style={{ color: props.mode === 'dark' ? 'white' : 'black', textDecoration: 'inherit' }} className="nav-Link navBarLink" to="/about">{props.abouttext}</Link>
