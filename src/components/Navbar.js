@@ -5,7 +5,8 @@ export default function Navbar(props) {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/textutils">{props.title}</Link>
+                {/* <Link className="navbar-brand" to="/textutils">{props.title}</Link> */}
+                <h4 className="navbar-brand" style={{ color: props.mode === 'dark' ? 'white' : 'black', fontWeight: 'normal', paddingTop: "10px" }}>{props.title}</h4>
                 {/* <a className="navbar-brand" href="#">{props.title}</a> */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -33,6 +34,7 @@ export default function Navbar(props) {
                 </div>
             </div>
         </nav>
+
     )
 }
 
